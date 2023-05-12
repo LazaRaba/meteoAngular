@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  /*Mise en place */
+  // /*Mise en place */
   // The base URL of the OpenWeatherMap API
   meteoApiBaseUrl: "https://api.openweathermap.org/data/2.5/weather?appid=61bd6ca2484cb853179f3fe9490689e0",
   // The query parameter for the city
@@ -13,6 +13,7 @@ export const environment = {
   meteoApiLangParam: "lang",
   // The query parameter for the units
   meteoApiUnitsParam: "units",
+
 
 };
 

@@ -1,6 +1,7 @@
 
 <div class="card">
-	<h1>Météo</h1>
+	<h1 class="title">Météo</h1>
+	<h4 class="date"> {{ todayDate | date: "EEEE dd MMM yyyy"}}</h4>
 	<div class="input flex aic jcsb">
 		<input class="put" type="text" placeholder="Taper votre ville ici ..." [(ngModel)]="newName">
 		<a href="#" (click)="updateMeteo()" class="toto"><span class="material-symbols-outlined">
@@ -8,37 +9,34 @@
 			</span></a>
 	</div>
 
-	<div class="title">
+	<div class="name">
 		<h1>{{ meteo?.name }}</h1>
-	</div>
-	<div class="date">
-		<h2> {{ todayDate | date: "EEEE dd MMM"}}</h2>
+	</div> 
 
-	</div>
 	<div class="temp">
-		<h1>{{ (meteo?.main?.temp || 0) | number:'1.0-0' }} ° C</h1>
+		<h1>{{ ( meteo?.main?.temp || 0) | number:'1.0-0' }} ° C</h1>
 	</div>
 
-	<div class="sky">
+	<div class="sky flex column aic jcc">
 		<h2 *ngIf="meteo && meteo.weather && meteo.weather[0]">
 			{{ meteo.weather[0].description }}
-			<!-- <img src="{{ meteo.weather[0].icon }}" alt="Weather icon"> -->
 		</h2>
-	</div>
+		<img [src]="iconImage" alt="Weather icon">
+	</div> 
 
 	<div class="wind flex gap-20 jcsa">
 		<div class="vent flex column jcc aic">
 			<span class="material-symbols-outlined">
 				air
 			</span>
-			<p>{{ meteo?.wind?.speed }} km/h</p>
+			<p>{{ (meteo?.wind?.speed || 0) * 3.6 | number:'1.0-0' }} km/h</p>
 		</div>
 
 		<div class="humidity flex column jcc aic">
 			<span class="material-symbols-outlined">
 				humidity_mid
 			</span>
-			<p>Humidité: {{ meteo?.main?.humidity }}%</p>
+			<p>{{ meteo?.main?.humidity }} %</p>
 		</div>
 
 	</div>

@@ -40,12 +40,15 @@ body {
     font-size: 16px;
     overflow-x: hidden;
     visibility: visible;
-    font-family: 'Roboto', sans-serif;
-    background: #404EED;
+    background: url(assets/images/pxfuel.jpg);
     display: flex;
     justify-content: center;
     align-items: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
+
 
 /*------------------*
 # Headings
@@ -59,7 +62,7 @@ h6 {
     margin-top: 0;
     font-style: normal;
     text-transform: normal;
-    font-weight: 200;
+    font-weight: 100;
 }
 
 h1 a,
