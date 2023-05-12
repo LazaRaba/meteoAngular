@@ -29,14 +29,14 @@
 			<span class="material-symbols-outlined">
 				air
 			</span>
-			<p>{{ (meteo?.wind?.speed || 0) * 3.6 | number:'1.0-0' }} km/h</p>
+			<p>Vent : {{ (meteo?.wind?.speed || 0) * 3.6 | number:'1.0-0' }} km/h</p>
 		</div>
 
 		<div class="humidity flex column jcc aic">
 			<span class="material-symbols-outlined">
 				humidity_mid
 			</span>
-			<p>{{ meteo?.main?.humidity }} %</p>
+			<p>Humidité : {{ meteo?.main?.humidity }} %</p>
 		</div>
 
 	</div>

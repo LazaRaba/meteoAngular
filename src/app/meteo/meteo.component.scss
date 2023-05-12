@@ -3,7 +3,7 @@
 .card {
 	display: flex;
 	height: 85vh;
-	width: 50vw;
+	width: 80vw;
 	background-color: #533747;
 	opacity: 1;
 	border-radius: 15px;
@@ -28,7 +28,7 @@
 
 .put {
 	border-radius: 20px;
-	height: 50%;
+	height: 40%;
 	width: calc(100% - 10px);
 	margin-left: 20px;
 	font-size: 14px;
@@ -47,6 +47,7 @@ button {
 
 .wind {
 	width: 80%;
+	font-size: 16px;
 }
 
 .toto {
