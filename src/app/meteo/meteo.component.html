@@ -11,6 +11,10 @@
 	<div class="title">
 		<h1>{{ meteo?.name }}</h1>
 	</div>
+	<div class="date">
+		<h2> {{ todayDate | date: "EEEE dd MMM"}}</h2>
+
+	</div>
 	<div class="temp">
 		<h1>{{ (meteo?.main?.temp || 0) | number:'1.0-0' }} ° C</h1>
 	</div>

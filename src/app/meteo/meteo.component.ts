@@ -13,6 +13,8 @@ export class MeteoComponent implements OnInit, OnDestroy {
   //* Injecter le service MeteoService dans le composant
   constructor(private meteoService: MeteoService) { }
 
+  todayDate = new Date();
+
   //* Déclarer une propriété newName pour stocker le nouveau nom de la ville
   newName: string = 'Toulouse';
 
