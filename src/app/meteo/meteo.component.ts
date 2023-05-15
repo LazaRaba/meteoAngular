@@ -17,11 +17,10 @@ export class MeteoComponent implements OnInit, OnDestroy {
 
   iconImage: any
 
-
   // Déclarer une propriété newName pour stocker le nouveau nom de la ville
   newName: string = 'Toulouse';
 
-  // // Déclarer une propriété meteo pour stocker les données de la météo
+  // Déclarer une propriété meteo pour stocker les données de la météo
   meteo: Meteo | undefined;
 
   // Déclarer une propriété meteoSubscription pour stocker l'abonnement à la météo
@@ -48,9 +47,16 @@ export class MeteoComponent implements OnInit, OnDestroy {
       .subscribe({
         next: (meteoData: Meteo) => {
           // Stocker les données de la météo dans la propriété meteoData du composant
-          this.meteo = meteoData
-          this.iconImage =`https://openweathermap.org/img/wn/${meteoData.weather[0].icon}@4x.png` 
-          this.newName = ''
+          this.meteo = meteoData;
+
+          // variable iconCode pour stocker le code de l'icon
+          const iconCode = this.meteo.weather[0].icon
+          
+          //this.iconImage =`https://openweathermap.org/img/wn/${meteoData.weather[0].icon}@4x.png` 
+          this.iconImage = this.meteoService.getIconUrl(iconCode);
+
+          this.newName = '';
+          
         },
         error: (error: any) => {
           console.log("Error :", error);

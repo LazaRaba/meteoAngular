@@ -15,6 +15,8 @@ export class MeteoService {
   private langApi: string = environment.meteoApiLangParam;
   private unitsApi: string = environment.meteoApiUnitsParam;
 
+  private iconApi: string = environment.meteoApiIconUrl;
+
   // Déclarer les propriétés de la ville, de la langue et de l'unité par défaut
   name: string = '';
   lang: string = 'fr';
@@ -27,14 +29,20 @@ export class MeteoService {
     this.getMeteoData();
   }
 
+  
+
   // Définir la méthode pour récupérer la météo en utilisant l'API OpenWeatherMap
   getMeteoData(): Observable<Meteo> {
 
     // Construire l'URL de l'API avec les propriétés de la ville, de la langue et de l'unité actuelles
-    const url = `${this.urlApi}&${this.nameApi}=${this.name}&${this.langApi}=${this.lang}&${this.unitsApi}=${this.units}`;
+    const url = `${this.urlApi}&${this.nameApi}=${this.name}&${this.langApi}=${this.lang}&${this.unitsApi}=${this.units}`; 
 
     // Envoyer une requête HTTP GET à l'API et retourner l'observable de la réponse
     return this.http.get<Meteo>(url);
+  }
+
+  getIconUrl(iconCode: string): string {
+    return `${this.iconApi}${iconCode}@4x.png`;
   }
 
   // Définir une méthode pour changer le nom de la ville

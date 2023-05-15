@@ -14,6 +14,9 @@ export const environment = {
   // The query parameter for the units
   meteoApiUnitsParam: "units",
 
+  //Icon api
+  meteoApiIconUrl:"https://openweathermap.org/img/wn/"
+
 
 };
 

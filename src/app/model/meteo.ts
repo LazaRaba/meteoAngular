@@ -1,4 +1,5 @@
 export interface Meteo {
+
     cord: {
         lon: number;
         lat: number;
